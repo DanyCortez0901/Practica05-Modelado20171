@@ -8,9 +8,13 @@ import calendar
 
 def calcular():
     fecha1 = datetime.now()
-    fecha2 = datetime(fecha1.year + 1, 9, 15)
+    if fecha1.month <= 9:
+        fecha2 = datetime(fecha1.year, 9, 15)
+    else:
+        fecha2 = datetime(fecha1.year + 1, 9, 15)
     b.setText("    "+str(fecha2 - fecha1)+"\n"+"para el sigiente 15 de septiembre")
     b.move(110,20)
+
 
 
 
